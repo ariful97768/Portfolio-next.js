@@ -2,6 +2,7 @@
 import emailjs from "@emailjs/browser";
 import { FormEvent, useRef } from "react";
 import { MdOutlineEmail } from "react-icons/md";
+import { toast } from "sonner";
 
 const Footer = () => {
   const formRef = useRef(null);
@@ -14,7 +15,7 @@ const Footer = () => {
       !formRef.current ||
       !process.env.NEXT_PUBLIC_PUBLIC_KEY
     )
-      return alert("ENV variables are not provided");
+      return toast.error("ENV variables are not provided");
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_SERVICE_KEY,
@@ -24,11 +25,13 @@ const Footer = () => {
       )
       .then(
         () => {
-          alert("Email sent! I’ll get back to you shortly.");
+          toast.success("Email sent! I’ll get back to you shortly.");
         },
         (error) => {
           console.log("FAILED...", error.text);
-          alert("Mission failed. Maybe daily mail sending limit reached!");
+          toast.error(
+            "Failed to send Email. Maybe daily mail sending limit reached!"
+          );
         }
       );
   };
@@ -44,12 +47,14 @@ const Footer = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl mb-7">
           Let&apos;s Work <span className="text-[#28e98c]">Together!</span>
         </h1>
-        <p className='text-lg sm:text-xl md:text-2xl font-light'>arifulxf@gmail.com</p>
+        <p className="text-lg sm:text-xl md:text-2xl font-light">
+          arifulxf@gmail.com
+        </p>
       </div>
       <div className="flex mb-8 flex-col items-center  p-8 border rounded-xl border-gray-500">
         <div className="bg-[#1f1f1f] w-full shrink-0 ">
           <form onSubmit={sendEmail} className="w-full" ref={formRef}>
-            <input type="text" hidden name="time" value={time} id="" />
+            <input type="text" readOnly hidden name="time" value={time} id="" />
             <div className="space-y-8">
               <div className="flex flex-col sm:flex-row gap-5">
                 <div className="w-full">
