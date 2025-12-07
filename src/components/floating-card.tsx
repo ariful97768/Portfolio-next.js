@@ -1,15 +1,20 @@
 import Image from "next/image";
-import img from "@/src/assets/profile.jpg";
+import img from "@/assets/profile.jpg";
+import * as motion from "motion/react-client";
 const FloatingCard = () => {
+  console.log("server floating card");
   return (
-    <div
+    <motion.aside
+      initial={{ x: -20 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.5 }}
       id="floatingCard"
       className="max-w-[500px] mx-auto lg:fixed lg:top-1/2 lg:left-4  transform lg:-translate-y-1/2 lg:w-[350px] p-6 border border-gray-500 rounded-3xl shadow-lg text-center z-10"
     >
       <h1 className="pb-4 text-4xl font-bold text-center">
         {"< Ariful Islam />"}
       </h1>
-      <div className="overflow-hidden relative h-52 w-67 mx-auto m-4 rounded-3xl">
+      <div className="overflow-hidden relative h-53 w-67 mx-auto m-4 mb-6 rounded-3xl">
         <Image
           src={img}
           unoptimized
@@ -19,16 +24,16 @@ const FloatingCard = () => {
         />
       </div>
       <div className="text-center max-w-max mx-auto">
-        <p className="text-slate-300 pb-2 pt-8 text-2xl">arifulxf@gmail.com</p>
-        <p className="text-slate-300 text-lg">Habiganj, Sylhet, Bangladesh</p>
+        <p className="pb-1 pt-8 text-2xl">arifulxf@gmail.com</p>
+        <p className="text-lg">Based in Sylhet, Bangladesh</p>
       </div>
-      <div className="text-slate-500 text-sm my-5">
+      <div className="text-slate-500 text-sm my-6">
         <p>© {new Date().getFullYear()} - All right reserved by Ariful Islam</p>
       </div>
       <div className="flex justify-center items-center gap-2">
         <a href="https://www.linkedin.com/in/ariful-axf/">
           <svg
-            className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+            className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 50 50"
             width="50px"
@@ -37,10 +42,9 @@ const FloatingCard = () => {
             <path d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18,35h-4V20h4V35z M16,17 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C18,16.105,17.105,17,16,17z M37,35h-4v-5v-2.5c0-1.925-1.575-3.5-3.5-3.5 S26,25.575,26,27.5V35h-4V20h4v1.816C27.168,20.694,28.752,20,30.5,20c3.59,0,6.5,2.91,6.5,6.5V35z" />
           </svg>
         </a>
-
         <a target="_blank" href="https://github.com/ariful97768">
           <svg
-            className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+            className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 50 50"
             width="50px"
@@ -51,7 +55,7 @@ const FloatingCard = () => {
         </a>
         <a target="_blank" href="mailto:arifulxf@gmail.com">
           <svg
-            className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+            className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
             version="1.1"
             id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +80,7 @@ const FloatingCard = () => {
           href="https://wa.me/8801313169776?text=Hi%20Ariful,%20I%20found%20your%20profile%20and%20would%20like%20to%20connect!"
         >
           <svg
-            className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+            className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 50 50"
             width="50px"
@@ -87,11 +91,11 @@ const FloatingCard = () => {
         </a>
       </div>
       <a href="Ariful_FullStack_Dev.pdf" download={"Ariful_Full_Stack_Dev"}>
-        <button className="btn mt-4 font-normal text-base px-14 py-3 text-black uppercase rounded-3xl border-2 bg-[#28e98c] border-green-500 hover:border-green-500 hover:bg-[#1f1f1f] hover:text-[#28e98c] transition-all duration-300 ease-in-out">
-          download resume
+        <button className="btn w-full mt-6 font-normal text-base px-14 py-3 text-black uppercase rounded-3xl border-2 bg-[#28e98c] border-green-500 hover:border-green-500 hover:bg-[#1f1f1f] hover:text-[#28e98c] transition-all duration-300 ease-in-out">
+        Download Resume
         </button>
       </a>
-    </div>
+    </motion.aside>
   );
 };
 
