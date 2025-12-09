@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import animationFile from "@/assets/animation.json";
 
 const LoadingAnimation = () => {
-  console.log("loading");
+ 
   return (
     <motion.div
       initial={{ opacity: 1 }}

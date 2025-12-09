@@ -18,7 +18,7 @@ const Introduction = () => {
         Introduction
       </h1>
       <div className="max-w-5xl mx-auto pt-10">
-        <h1 className="text-4xl leading-22 sm:text-5xl md:text-6xl lg:text-7xl mb-4">
+        <h1 className="leading-10 sm:leading-14 md:leading-18 lg:leading-22 text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4">
           Say Hi from{" "}
           <span className="text-[#28e98c]">
             Ariful,

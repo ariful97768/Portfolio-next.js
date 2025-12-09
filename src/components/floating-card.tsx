@@ -2,19 +2,18 @@ import Image from "next/image";
 import img from "@/assets/profile.jpg";
 import * as motion from "motion/react-client";
 const FloatingCard = () => {
-  console.log("server floating card");
   return (
     <motion.aside
       initial={{ x: -20 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5 }}
       id="floatingCard"
-      className="max-w-[500px] mx-auto lg:fixed lg:top-1/2 lg:left-4  transform lg:-translate-y-1/2 lg:w-[350px] p-6 border border-gray-500 rounded-3xl shadow-lg text-center z-10"
+      className="max-w-[500px] mx-auto lg:fixed lg:top-1/2 lg:left-4 transform lg:-translate-y-1/2 lg:w-[350px] p-4 sm:p-6 border border-gray-500 rounded-3xl shadow-lg text-center z-10"
     >
-      <h1 className="pb-4 text-4xl font-bold text-center">
+      <h1 className="pb-4 text-[28px] md:text-4xl font-bold text-center">
         {"< Ariful Islam />"}
       </h1>
-      <div className="overflow-hidden relative h-53 w-67 mx-auto m-4 mb-6 rounded-3xl">
+      <div className="overflow-hidden relative h-47 w-60 sm:h-53 sm:w-67 mx-auto m-4 mb-6 rounded-3xl">
         <Image
           src={img}
           unoptimized
@@ -91,8 +90,8 @@ const FloatingCard = () => {
         </a>
       </div>
       <a href="Ariful_FullStack_Dev.pdf" download={"Ariful_Full_Stack_Dev"}>
-        <button className="btn w-full mt-6 font-normal text-base px-14 py-3 text-black uppercase rounded-3xl border-2 bg-[#28e98c] border-green-500 hover:border-green-500 hover:bg-[#1f1f1f] hover:text-[#28e98c] transition-all duration-300 ease-in-out">
-        Download Resume
+        <button className="btn text-xs sm:text-sm md:text-base w-full mt-6 font-normal px-14 py-3 text-black uppercase rounded-3xl border-2 bg-[#28e98c] border-green-500 hover:border-green-500 hover:bg-[#1f1f1f] hover:text-[#28e98c] transition-all duration-300 ease-in-out">
+          Download Resume
         </button>
       </a>
     </motion.aside>

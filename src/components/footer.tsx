@@ -27,8 +27,7 @@ const Footer = () => {
         () => {
           toast.success("Email sent! I’ll get back to you shortly.");
         },
-        (error) => {
-          console.log("FAILED...", error.text);
+        () => {
           toast.error(
             "Failed to send Email. Maybe daily mail sending limit reached!"
           );
@@ -153,7 +152,7 @@ const Footer = () => {
         <div className="flex justify-center items-center gap-2">
           <a target="_blank" href="https://www.linkedin.com/in/ariful-axf/">
             <svg
-              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
               width="50px"
@@ -165,7 +164,7 @@ const Footer = () => {
           </a>
           <a target="_blank" href="mailto:arifulxf@gmail.com">
             <svg
-              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
               version="1.1"
               id="Layer_1"
               xmlns="http://www.w3.org/2000/svg"
@@ -174,13 +173,13 @@ const Footer = () => {
               width="122.88px"
               height="78.607px"
               viewBox="0 0 122.88 78.607"
-              enable-background="new 0 0 122.88 78.607"
+              enableBackground="new 0 0 122.88 78.607"
               xmlSpace="preserve"
             >
               <g>
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M61.058,65.992l24.224-24.221l36.837,36.836H73.673h-25.23H0l36.836-36.836 L61.058,65.992L61.058,65.992z M1.401,0l59.656,59.654L120.714,0H1.401L1.401,0z M0,69.673l31.625-31.628L0,6.42V69.673L0,69.673z M122.88,72.698L88.227,38.045L122.88,3.393V72.698L122.88,72.698z"
                 />
               </g>
@@ -188,7 +187,7 @@ const Footer = () => {
           </a>
           <a target="_blank" href="https://github.com/ariful97768">
             <svg
-              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
               width="50px"
@@ -203,7 +202,7 @@ const Footer = () => {
             href="https://www.facebook.com/profile.php?id=100054997235096"
           >
             <svg
-              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
               width="50px"
@@ -218,7 +217,7 @@ const Footer = () => {
             href="https://wa.me/8801313169776?text=Hi%20Ariful,%20I%20found%20your%20profile%20and%20would%20like%20to%20connect!"
           >
             <svg
-              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-[8px] text-gray-500 border-gray-600 w-10 h-10"
+              className="fill-current hover:text-[#28e98c] hover:border-green-500 transition-all duration-300 border-2 rounded-full p-2 text-gray-500 border-gray-600 w-10 h-10"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
               width="50px"
