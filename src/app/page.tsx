@@ -1,5 +1,5 @@
 import ServerCompWrapper from "@/components/client-wrapper";
-import Main from "@/components/Main";
+import Main from "@/app/Main";
 import { Toaster } from "sonner";
 
 const Home = () => {
