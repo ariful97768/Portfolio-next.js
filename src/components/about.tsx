@@ -23,7 +23,7 @@ const About = () => {
         viewport={{ once: true, amount: 0.2 }}
         className="max-w-5xl mx-auto py-10"
       >
-        <h1 className="text-3xl leading-16 sm:text-4xl md:text-5xl mb-4">
+        <h1 className="leading-10 sm:leading-12 md:leading-14 lg:leading-16 text-3xl sm:text-4xl md:text-5xl mb-4">
           Every great codebase begins with an even
           <span className="text-[#28e98c] "> better architecture.</span>
         </h1>
