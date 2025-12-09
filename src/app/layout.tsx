@@ -8,7 +8,7 @@ const geistSans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ariful | Fullstack Developer",
+  title: "Ariful Islam",
   description: "Personal portfolio website",
 
   icons: {
