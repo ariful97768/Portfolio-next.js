@@ -1,7 +1,7 @@
 # Ariful's Portfolio
-`![Portfolio Preview](./public/preview.png)`
 
-![Project Banner](https://via.placeholder.com/1200x400?text=Portfolio+Banner+Image)
+![Project Banner](./public/preview.png)
+
 A personal portfolio website built with **Next.js** and **TypeScript** to showcase my projects, skills, and professional journey. Designed with a focus on performance, SEO, and modern UI/UX.
 
 **Live Demo:** [ariful.tech](https://ariful.tech/)
