@@ -1,10 +1,13 @@
-import Image from "next/image";
 import { MdOutlineGridOn } from "react-icons/md";
-
 import akademi from "@/assets/akademi.png";
+import designForgee from "@/assets/design-forgee.png";
 import bookStore from "@/assets/book-store.png";
 import lingoBingo from "@/assets/lingo-bingo.png";
 import * as motion from "motion/react-client";
+import ProjectCard from "./ui/project-card";
+import Modal from "./ui/modal";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const Projects = () => {
   return (
@@ -23,326 +26,131 @@ const Projects = () => {
       <div className="mx-auto pt-10 ">
         <h1 className="text-3xl sm:text-4xl md:text-5xl mb-8">
           Featured
-          <span className="text-[#28e98c] "> Projects.</span>
+          <span className="text-[#28e98c]"> Projects.</span>
         </h1>
         <div className="space-y-8">
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <h3 className="mb-3 ml-3 text-lg">Akademi</h3>
-            <div className="relative">
-              <Image className="rounded-3xl" src={akademi} alt="" />
-            </div>
-            <div className="flex gap-3 ml-3 mt-3">
-              <a
-                className="hover:text-green-400 transition-colors duration-300 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://akademi-uni.web.app/"
-              >
-                Live link
-              </a>
-              <label
-                htmlFor="my_modal_akademi"
-                className="hover:text-green-400 hover:cursor-pointer transition-colors duration-300 "
-              >
-                View Details
-              </label>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <h3 className="mb-3 ml-3 text-lg">Books World</h3>
-            <div className="relative">
-              <Image className="rounded-3xl" src={bookStore} alt="" />
-            </div>
-            <div className="flex gap-3 ml-3 mt-3">
-              <a
-                className="hover:text-green-400 transition-colors duration-300 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://books-world-49b0c.web.app/"
-              >
-                Live link
-              </a>
-              <label
-                htmlFor="my_modal_bookstore"
-                className="hover:text-green-400 hover:cursor-pointer transition-colors duration-300 "
-              >
-                View Details
-              </label>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <h3 className="mb-3 ml-3 text-lg">Lingo Bingo</h3>
-            <div className="relative">
-              <Image className="rounded-3xl" src={lingoBingo} alt="" />
-            </div>
-            <div className="flex gap-3 ml-3 mt-3">
-              <a
-                className="hover:text-green-400 transition-colors duration-300 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://lingo-bingo-f6242.web.app/"
-              >
-                Live link
-              </a>
-              <label
-                htmlFor="my_modal_lingo"
-                className="hover:text-green-400 hover:cursor-pointer transition-colors duration-300 "
-              >
-                View Details
-              </label>
-            </div>
-          </motion.div>
-
-          <input
-            type="checkbox"
-            id="my_modal_akademi"
-            className="modal-toggle"
+          {/* Project cards */}
+          <ProjectCard
+            image={akademi}
+            title="Akademi"
+            liveLink="https://akademi-uni.web.app/"
+            modalId="my_modal_akademi"
           />
-          <div role="dialog" id="my_modal_akademi" className="modal">
-            <div className="modal-box h-5/6 md:h-full md:max-h-[calc(100vh-5em)] w-11/12 sm:w-10/12 md:w-9/12 lg:w-8/12 xl:w-7/12 max-w-5xl space-y-3 bg-[#1f1f1f]">
-              <div>
-                <Image
-                  className="rounded-xl mx-auto"
-                  src={akademi}
-                  alt="Akademi Banner"
-                />
-              </div>
-              <h3 className="mt-5! font-bold text-xl">
-                Akademi -{" "}
-                <span className="font-normal text-base">
-                  Scholarship Management System
-                </span>
-              </h3>
-              <div className="flex gap-3">
-                <a
-                  className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://akademi-uni.web.app/"
-                >
-                  Live link
-                </a>
-                <a
-                  className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-                  target="_blank"
-                  href="https://github.com/ariful97768/Akademi-Scholarships-Management"
-                >
-                  Frontend repository
-                </a>
-                <a
-                  className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-                  target="_blank"
-                  href="https://github.com/ariful97768/Akademi-Server"
-                >
-                  Backend repository
-                </a>
-              </div>
-              <p>
-                Akademi is a web-based platform designed to streamline the
+          <ProjectCard
+            image={bookStore}
+            title="Books World"
+            liveLink="https://books-world-49b0c.web.app/"
+            modalId="my_modal_bookstore"
+          />
+          <ProjectCard
+            image={designForgee}
+            title="Design Forge"
+            liveLink="https://design-forgee.vercel.app/"
+            modalId="my_modal_designforgee"
+          />
+          <ProjectCard
+            image={lingoBingo}
+            title="Lingo Bingo"
+            liveLink="https://lingo-bingo-f6242.web.app/"
+            modalId="my_modal_lingo"
+          />
+
+          {/* Modals for the project description */}
+
+          <Modal
+            modalId="my_modal_akademi"
+            image={akademi}
+            title="Akademi"
+            subtitle="- Scholarship Management System"
+            liveLink="https://akademi-uni.web.app/"
+            frontendRepo="https://github.com/ariful97768/Akademi-Scholarships-Management"
+            backendRepo="https://github.com/ariful97768/Akademi-Server"
+            description="Akademi is a web-based platform designed to streamline the
                 scholarship application and management process. It allows
                 students to apply for scholarships seamlessly while enabling
                 administrators to efficiently review and process applications.
                 Built with the MERN stack and Firebase authentication, Akademi
                 ensures a smooth user experience with secure access control. The
                 platform also includes a payment gateway for fee submissions,
-                making the process more convenient for users.
-              </p>
-              <div className="flex gap-2 items-center flex-wrap">
-                <p className="font-semibold">Technology used:</p>
-                <span className="badge badge-outline">JavaScript</span>
-                <span className="badge badge-outline">React</span>
-                <span className="badge badge-outline">Node.js</span>
-                <span className="badge badge-outline">MongoDB</span>
-                <span className="badge badge-outline">Express.js</span>
-                <span className="badge badge-outline">Firebase Auth</span>
-                <span className="badge badge-outline">Tailwind CSS</span>
-                <span className="badge badge-outline">Stripe</span>
-              </div>
-              <div>
-                <p className="font-semibold">Challenges Faced:</p>
-                <ul className="list-disc pl-7">
-                  <li>Handling file uploads securely</li>
-                  <li>Optimizing database queries for better performance</li>
-                  <li>
-                    Defining clear permissions for Admins, Students, and
-                    Moderators without conflicts.
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-semibold">Future Enhancements:</p>
-                <ul className="list-disc pl-7">
-                  <li>
-                    Send email/SMS alerts for application updates, deadlines,
-                    and approvals.
-                  </li>
-                  <li>
-                    Allow users to download their submitted applications as
-                    PDFs.
-                  </li>
-                  <li>Prevent spam and bot registrations.</li>
-                </ul>
-              </div>
-              <div className="modal-action">
-                <label
-                  className="btn bg-white text-black"
-                  htmlFor="my_modal_akademi"
-                >
-                  Close
-                </label>
-              </div>
-            </div>
-          </div>
-          <input
-            type="checkbox"
-            id="my_modal_bookstore"
-            className="modal-toggle"
+                making the process more convenient for users."
+            technologies={[
+              "JavaScript",
+              "React",
+              "Node.js",
+              "MongoDB",
+              "Express.js",
+              "Firebase Auth",
+              "Tailwind CSS",
+              "Stripe",
+            ]}
+            challenges={[
+              "Handling image uploads securely",
+              "Optimizing database queries for better performance",
+              "Defining clear permissions for Admins, Students, and Moderators without conflicts",
+            ]}
+            solutions={[
+              "Implemented secure image upload system using imgbb API",
+              "Optimized database queries using indexing and aggregation pipeline",
+              "Implemented RBAC for secure access control",
+            ]}
           />
-          <div role="dialog" id="my_modal_bookstore" className="modal">
-            <div className="modal-box h-5/6 md:h-full md:max-h-[calc(100vh-5em)] w-11/12 sm:w-10/12 md:w-9/12 lg:w-8/12 xl:w-7/12 max-w-5xl space-y-3 bg-[#1f1f1f]">
-              <div>
-                <Image
-                  className="rounded-xl mx-auto"
-                  src={bookStore}
-                  alt="BookStore Banner"
-                />
-              </div>
-              <h3 className="mt-5! font-bold text-xl">
-                Book Store -{" "}
-                <span className="font-normal text-base">
-                  Your go to Books library
-                </span>
-              </h3>
-              <div className="flex gap-3">
-                <a
-                  className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://books-world-49b0c.web.app/"
-                >
-                  Live link
-                </a>
-                <a
-                  className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-                  target="_blank"
-                  href="https://github.com/ariful97768/Book-Store"
-                >
-                  Frontend repository
-                </a>
-                <a
-                  className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-                  target="_blank"
-                  href="https://github.com/ariful97768/Book-Store-Server"
-                >
-                  Backend repository
-                </a>
-              </div>
-              <p>
-                Books Store - A MERN-based Book Borrowing Platform. A full-stack
+          <Modal
+            modalId="my_modal_bookstore"
+            image={bookStore}
+            title="Book Store"
+            subtitle="Your go to Books library"
+            liveLink="https://books-world-49b0c.web.app/"
+            frontendRepo="https://github.com/ariful97768/Book-Store"
+            backendRepo="https://github.com/ariful97768/Book-Store-Server"
+            description="Books Store - A MERN-based Book Borrowing Platform. A full-stack
                 MERN application where users can browse books by category,
                 borrow and manage their borrowed list, return books, add new
                 books, update their own books, and explore top-rated books on
-                the homepage.
-              </p>
-              <div className="flex gap-2 items-center flex-wrap">
-                <p className="font-semibold">Technology used:</p>
-                <span className="badge badge-outline">JavaScript</span>
-                <span className="badge badge-outline">React</span>
-                <span className="badge badge-outline">Node.js</span>
-                <span className="badge badge-outline">MongoDB</span>
-                <span className="badge badge-outline">Express.js</span>
-                <span className="badge badge-outline">Firebase Auth</span>
-                <span className="badge badge-outline">Tailwind CSS</span>
-              </div>
-              <div>
-                <p className="font-semibold">Challenges Faced:</p>
-                <ul className="list-disc pl-7">
-                  <li>
-                    Optimizing book search and filtering to deliver fast results
-                    for users.
-                  </li>
-                  <li>
-                    Implementing real-time stock updates to prevent overselling.
-                  </li>
-                  <li>
-                    Optimizing book search and filtering to deliver fast results
-                    for users.
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-semibold">Future Enhancements:</p>
-                <ul className="list-disc pl-7">
-                  <li>
-                    Admin Moderation System to approve or reject book listings.
-                  </li>
-                  <li>
-                    Delivery Tracking Integration to provide real-time shipping
-                    updates.
-                  </li>
-                  <li>
-                    Dark Mode Feature for a better reading and browsing
-                    experience..
-                  </li>
-                </ul>
-              </div>
-              <div className="modal-action">
-                <label className="btn text-black bg-white" htmlFor="my_modal_bookstore">
-                  Close
-                </label>
-              </div>
-            </div>
-          </div>
-          <input type="checkbox" id="my_modal_lingo" className="modal-toggle" />
-          <div role="dialog" id="my_modal_lingo" className="modal">
-            <div className="modal-box h-5/6 md:h-full md:max-h-[calc(100vh-5em)] w-11/12 sm:w-10/12 md:w-9/12 lg:w-8/12 xl:w-7/12 max-w-5xl space-y-3 bg-[#1f1f1f]">
-              <div>
-                <Image
-                  className="rounded-xl mx-auto"
-                  src={lingoBingo}
-                  alt="LingoBingo Banner"
-                />
-              </div>
-              <h3 className="mt-5! font-bold text-xl">
-                Lingo Bingo -{" "}
-                <span className="font-normal text-base">
-                  Learn language with fun
-                </span>
-              </h3>
-              <div className="flex gap-3">
-                <a
-                  className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://lingo-bingo-f6242.web.app/"
-                >
-                  Live link
-                </a>
-                <a
-                  className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-                  target="_blank"
-                  href="https://github.com/ariful97768/Lingo-Bingo"
-                >
-                  Frontend repository
-                </a>
-              </div>
-              <p>
-                Lingo Bingo is an interactive and engaging word-based game
+                the homepage."
+            technologies={[
+              "JavaScript",
+              "React",
+              "Node.js",
+              "MongoDB",
+              "Express.js",
+              "Firebase Auth",
+              "Tailwind CSS",
+              "React Toastify",
+            ]}
+            challenges={[
+              "Optimizing book search and filtering to deliver fast results for users",
+              "Displaying real-time stock updates to prevent over-borrowing",
+              "Prevent users from borrowing more than 3 books at a time",
+            ]}
+            solutions={[
+              "Implemented optimized search and filtering using MongoDB aggregation pipeline",
+              "Used stock calculation before confirming borrow request",
+              "Implemented user borrowing tracking",
+            ]}
+          />
+          <Modal
+            modalId="my_modal_designforgee"
+            image={designForgee}
+            title="Design Forge"
+            subtitle="Agency website clone"
+            liveLink="https://design-forgee.vercel.app/"
+            frontendRepo="https://github.com/ariful97768/Design-Forge"
+            description="Design Forge — clone of ilmora.agency, A modern and dynamic agency website built with React and Tailwind CSS. It features a sleek, responsive design with smooth animations and interactive elements to showcase the agency's services and portfolio. A fully responsive single-page website — built to showcase modern web layout, responsiveness, and design precision understanding."
+            technologies={[
+              "Typescript",
+              "Next.js",
+              "Tailwind CSS",
+              "React marquee",
+            ]}
+          />
+          <Modal
+            modalId="my_modal_lingo"
+            image={lingoBingo}
+            title="Lingo Bingo"
+            subtitle="Learn language with fun"
+            liveLink="https://lingo-bingo-f6242.web.app/"
+            frontendRepo="https://github.com/ariful97768/Lingo-Bingo"
+            description="Lingo Bingo is an interactive and engaging word-based game
                 platform that combines the excitement of Bingo with language
                 learning. Players can participate in fun and educational games,
                 where they match words or phrases to improve their vocabulary.
@@ -350,53 +158,31 @@ const Projects = () => {
                 with smooth animations and responsive design to enhance the user
                 experience. Integrated with Firebase for user authentication and
                 data management, Lingo Bingo ensures a secure and seamless
-                experience.
-              </p>
-              <div className="flex gap-2 items-center flex-wrap">
-                <p className="font-semibold">Technology used:</p>
-                <span className="badge badge-outline">JavaScript</span>
-                <span className="badge badge-outline">React</span>
-                <span className="badge badge-outline">Node.js</span>
-                <span className="badge badge-outline">MongoDB</span>
-                <span className="badge badge-outline">Express.js</span>
-                <span className="badge badge-outline">Firebase Auth</span>
-                <span className="badge badge-outline">Tailwind CSS</span>
-              </div>
-              <div>
-                <p className="font-semibold">Challenges Faced:</p>
-                <ul className="list-disc pl-7">
-                  <li>
-                    Structuring and categorizing words or phrases for easy
-                    access and use can become overwhelming.
-                  </li>
-                  <li>Optimizing database queries for better performance</li>
-                  <li>
-                    Defining clear permissions for Admins, Students, and
-                    Moderators without conflicts.
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-semibold">Future Enhancements:</p>
-                <ul className="list-disc pl-7">
-                  <li>
-                    Introduce achievements, leaderboards, or a reward system to
-                    incentivize users to play more frequently.
-                  </li>
-                  <li>Provide users with detailed performance analytics.</li>
-                  <li>Prevent spam and bot registrations.</li>
-                </ul>
-              </div>
-              <div className="modal-action">
-                <label
-                  htmlFor="my_modal_lingo"
-                  className="btn text-black bg-white"
-                >
-                  Close
-                </label>
-              </div>
-            </div>
-          </div>
+                experience."
+            technologies={[
+              "JavaScript",
+              "React",
+              "Node.js",
+              "MongoDB",
+              "Express.js",
+              "Firebase Auth",
+              "Tailwind CSS",
+              "React Toastify",
+            ]}
+            challenges={[
+              "Structuring and categorizing words or phrases for easy access.",
+            ]}
+            solutions={["Implemented a dynamic and user-friendly interface"]}
+          />
+        </div>
+        <div className="flex justify-center group items-center border hover:border-[#28E98C] w-full mt-10 rounded-full">
+          <Link
+            className="text-white py-2 px-3 w-full flex items-center justify-center gap-2 font-semibold hover:text-[#28E98C] transition-colors duration-300"
+            href="/portfolio"
+          >
+            View All Projects
+            <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
+          </Link>
         </div>
       </div>
     </motion.section>
