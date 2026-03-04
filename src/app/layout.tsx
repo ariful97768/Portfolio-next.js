@@ -26,6 +26,10 @@ export const metadata: Metadata = {
       },
     ],
   },
+  verification: {
+    google:
+      "googlee80546210f49ae72.html",
+  },
   manifest: "/site.webmanifest", // For Android/PWA
 };
 
