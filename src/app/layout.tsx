@@ -13,22 +13,15 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
     shortcut: ["/favicon.ico"], // For legacy systems
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-    other: [
-      {
-        rel: "mask-icon", // For Safari pinned tabs
-        url: "/safari-pinned-tab.svg",
-        color: "#ff0000",
-      },
-    ],
   },
   verification: {
-    google:
-      "googlee80546210f49ae72.html",
+    google: "googlee80546210f49ae72.html",
   },
   manifest: "/site.webmanifest", // For Android/PWA
 };
