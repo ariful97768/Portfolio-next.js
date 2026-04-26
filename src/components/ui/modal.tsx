@@ -7,10 +7,10 @@ export default function Modal({
   image,
   title,
   subtitle,
+  description,
   liveLink,
   frontendRepo,
   backendRepo,
-  description,
   technologies,
   challenges,
   solutions,
@@ -19,10 +19,10 @@ export default function Modal({
   image: StaticImageData;
   title: string;
   subtitle: string;
-  liveLink: string;
-  frontendRepo: string;
-  backendRepo?: string;
   description: string;
+  liveLink: string;
+  frontendRepo?: string;
+  backendRepo?: string;
   technologies: string[];
   challenges?: string[];
   solutions?: string[];
@@ -51,13 +51,20 @@ export default function Modal({
             >
               Live link
             </Link>
-            <Link
-              className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
-              target="_blank"
-              href={frontendRepo}
-            >
-              Frontend repository
-            </Link>
+            {!frontendRepo && !backendRepo && (
+              <p className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base">
+                Closed source
+              </p>
+            )}
+            {frontendRepo && (
+              <Link
+                className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"
+                target="_blank"
+                href={frontendRepo}
+              >
+                Frontend repository
+              </Link>
+            )}
             {backendRepo && (
               <Link
                 className="hover:text-green-400 transition-colors duration-300 underline text-xs md:text-base"

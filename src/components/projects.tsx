@@ -2,7 +2,7 @@ import { MdOutlineGridOn } from "react-icons/md";
 import akademi from "@/assets/akademi.png";
 import designForgee from "@/assets/design-forgee.png";
 import bookStore from "@/assets/book-store.png";
-import lingoBingo from "@/assets/lingo-bingo.png";
+import creativeHub from "@/assets/creative-hub.png";
 import * as motion from "motion/react-client";
 import ProjectCard from "./ui/project-card";
 import Modal from "./ui/modal";
@@ -26,7 +26,7 @@ const Projects = () => {
       <div className="mx-auto pt-10 ">
         <h1 className="text-3xl sm:text-4xl md:text-5xl mb-8">
           Featured
-          <span className="text-[#28e98c]"> Projects.</span>
+          <span className="text-[#28e98c]"> Projects</span>
         </h1>
         <div className="space-y-8">
           {/* Project cards */}
@@ -49,10 +49,10 @@ const Projects = () => {
             modalId="my_modal_designforgee"
           />
           <ProjectCard
-            image={lingoBingo}
-            title="Lingo Bingo"
-            liveLink="https://lingo-bingo-f6242.web.app/"
-            modalId="my_modal_lingo"
+            image={creativeHub}
+            title="Creative Hub IT"
+            liveLink="https://creativehubit.com.bd/"
+            modalId="my_modal_creativehub"
           />
 
           {/* Modals for the project description */}
@@ -65,14 +65,7 @@ const Projects = () => {
             liveLink="https://akademi-uni.web.app/"
             frontendRepo="https://github.com/ariful97768/Akademi-Scholarships-Management"
             backendRepo="https://github.com/ariful97768/Akademi-Server"
-            description="Akademi is a web-based platform designed to streamline the
-                scholarship application and management process. It allows
-                students to apply for scholarships seamlessly while enabling
-                administrators to efficiently review and process applications.
-                Built with the MERN stack and Firebase authentication, Akademi
-                ensures a smooth user experience with secure access control. The
-                platform also includes a payment gateway for fee submissions,
-                making the process more convenient for users."
+            description="Akademi is a web platform that streamlines the scholarship application and management process. It allows students to apply for scholarships with ease while helping administrators review and process applications efficiently. Built with the MERN stack and Firebase Authentication, it provides secure access control, a smooth user experience, and an integrated payment gateway for fee submissions."
             technologies={[
               "JavaScript",
               "React",
@@ -89,8 +82,8 @@ const Projects = () => {
               "Defining clear permissions for Admins, Students, and Moderators without conflicts",
             ]}
             solutions={[
-              "Implemented secure image upload system using imgbb API",
-              "Optimized database queries using indexing and aggregation pipeline",
+              "Implemented a secure image upload system using the ImgBB API",
+              "Optimized database queries using indexing and aggregation pipelines",
               "Implemented RBAC for secure access control",
             ]}
           />
@@ -120,11 +113,11 @@ const Projects = () => {
             challenges={[
               "Optimizing book search and filtering to deliver fast results for users",
               "Displaying real-time stock updates to prevent over-borrowing",
-              "Prevent users from borrowing more than 3 books at a time",
+              "Preventing users from borrowing more than 3 books at a time",
             ]}
             solutions={[
-              "Implemented optimized search and filtering using MongoDB aggregation pipeline",
-              "Used stock calculation before confirming borrow request",
+              "Implemented optimized search and filtering using a MongoDB aggregation pipeline",
+              "Used stock calculation before confirming borrow requests",
               "Implemented user borrowing tracking",
             ]}
           />
@@ -135,7 +128,7 @@ const Projects = () => {
             subtitle="Agency website clone"
             liveLink="https://design-forgee.vercel.app/"
             frontendRepo="https://github.com/ariful97768/Design-Forge"
-            description="Design Forge — clone of ilmora.agency, A modern and dynamic agency website built with React and Tailwind CSS. It features a sleek, responsive design with smooth animations and interactive elements to showcase the agency's services and portfolio. A fully responsive single-page website — built to showcase modern web layout, responsiveness, and design precision understanding."
+            description="Design Forge is a modern agency website clone inspired by ilmora.agency. Built with React and Tailwind CSS, it features a sleek responsive layout, smooth animations, and interactive sections designed to showcase services and portfolio work with strong visual precision."
             technologies={[
               "Typescript",
               "Next.js",
@@ -144,35 +137,26 @@ const Projects = () => {
             ]}
           />
           <Modal
-            modalId="my_modal_lingo"
-            image={lingoBingo}
-            title="Lingo Bingo"
-            subtitle="Learn language with fun"
-            liveLink="https://lingo-bingo-f6242.web.app/"
-            frontendRepo="https://github.com/ariful97768/Lingo-Bingo"
-            description="Lingo Bingo is an interactive and engaging word-based game
-                platform that combines the excitement of Bingo with language
-                learning. Players can participate in fun and educational games,
-                where they match words or phrases to improve their vocabulary.
-                The website features a dynamic user interface built with React,
-                with smooth animations and responsive design to enhance the user
-                experience. Integrated with Firebase for user authentication and
-                data management, Lingo Bingo ensures a secure and seamless
-                experience."
+            modalId="my_modal_creativehub"
+            image={creativeHub}
+            title="Creative Hub IT"
+            subtitle="A Creative Hub IT Portfolio"
+            liveLink="https://creativehubit.com.bd/"
+            description="Creative Hub IT is a modern, responsive digital agency portfolio built with the MERN stack as a technical assessment project. Based on a Figma design, it delivers a polished, pixel-accurate interface, secure authentication, smooth admin-side content management, and reliable image handling for a seamless user experience."
+            challenges={[
+              "Image hosting reliability: during development, I initially used ImgBB, but encountered server-side issues. I later migrated to Cloudinary for a more stable and scalable solution.",
+            ]}
             technologies={[
-              "JavaScript",
-              "React",
+              "Typescript",
+              "Next.js",
+              "Motion",
+              "Tailwind CSS",
+              "Swipper.js",
               "Node.js",
               "MongoDB",
-              "Express.js",
               "Firebase Auth",
-              "Tailwind CSS",
-              "React Toastify",
+              "Sweet Alert",
             ]}
-            challenges={[
-              "Structuring and categorizing words or phrases for easy access.",
-            ]}
-            solutions={["Implemented a dynamic and user-friendly interface"]}
           />
         </div>
         <div className="flex justify-center group items-center border hover:border-[#28E98C] w-full mt-10 rounded-full">

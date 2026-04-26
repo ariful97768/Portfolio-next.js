@@ -69,7 +69,7 @@ export default function Projects() {
         <ProjectCard
           image={creativeHub}
           title="Creative Hub IT"
-          liveLink="https://creative-hub-it-portfolio.vercel.app/"
+          liveLink="https://creativehubit.com.bd/"
           modalId="my_modal_creativehub"
         />
 
@@ -217,7 +217,7 @@ export default function Projects() {
           image={creativeHub}
           title="Creative Hub IT"
           subtitle="A Creative Hub IT Portfolio"
-          liveLink="https://creative-hub-it-portfolio.vercel.app/"
+          liveLink="https://creativehubit.com.bd/"
           frontendRepo="https://github.com/ariful97768/Creative-Hub-Portfolio"
           description="A modern, responsive digital agency portfolio website built with Next.js, TypeScript, and Tailwind CSS. Developed as a technical assessment task based on a specific Figma design."
           technologies={[
